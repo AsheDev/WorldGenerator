@@ -11,6 +11,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generate", "Generate\Genera
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldGen.Database", "WorldGen.Database\WorldGen.Database.csproj", "{2E470643-CAE9-42B3-BCB2-DE3AF1E4A48B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WordsAndNames", "WordsAndNames", "{6BFB97A3-C06C-46EB-8961-EAC92508331A}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\StoryGenerator\Names\Adjectives.txt = ..\..\..\StoryGenerator\Names\Adjectives.txt
+		..\..\..\StoryGenerator\Names\DeityNames.txt = ..\..\..\StoryGenerator\Names\DeityNames.txt
+		..\..\..\StoryGenerator\Names\DwarvenPlaceNames.txt = ..\..\..\StoryGenerator\Names\DwarvenPlaceNames.txt
+		..\..\..\StoryGenerator\Names\ElvishPlaceNames.txt = ..\..\..\StoryGenerator\Names\ElvishPlaceNames.txt
+		..\..\..\StoryGenerator\Names\FemaleDwarfNames.txt = ..\..\..\StoryGenerator\Names\FemaleDwarfNames.txt
+		..\..\..\StoryGenerator\Names\FemaleElvishNames.txt = ..\..\..\StoryGenerator\Names\FemaleElvishNames.txt
+		..\..\..\StoryGenerator\Names\FemaleHumanNames.txt = ..\..\..\StoryGenerator\Names\FemaleHumanNames.txt
+		..\..\..\StoryGenerator\Names\HumanPlaceNames.txt = ..\..\..\StoryGenerator\Names\HumanPlaceNames.txt
+		..\..\..\StoryGenerator\Names\MaleDwarfNames.txt = ..\..\..\StoryGenerator\Names\MaleDwarfNames.txt
+		..\..\..\StoryGenerator\Names\MaleElvishNames.txt = ..\..\..\StoryGenerator\Names\MaleElvishNames.txt
+		..\..\..\StoryGenerator\Names\MaleHumanNames.txt = ..\..\..\StoryGenerator\Names\MaleHumanNames.txt
+		..\..\..\StoryGenerator\Names\NegativeTraits.txt = ..\..\..\StoryGenerator\Names\NegativeTraits.txt
+		..\..\..\StoryGenerator\Names\PositiveTraits.txt = ..\..\..\StoryGenerator\Names\PositiveTraits.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
