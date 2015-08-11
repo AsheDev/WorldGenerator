@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7328D22B-21DF-49BE-9D27-925D507F7B97}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Generate</RootNamespace>
+    <AssemblyName>Generate</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CalendarGen.cs" />
+    <Compile Include="CivilizationGen.cs" />
+    <Compile Include="ContinentGen.cs" />
+    <Compile Include="DeityGen.cs" />
+    <Compile Include="GeneralWordGen.cs" />
+    <Compile Include="LanguageGen.cs" />
+    <Compile Include="MarkovNameGenerator.cs" />
+    <Compile Include="MythosGen.cs" />
+    <Compile Include="NameGen.cs" />
+    <Compile Include="PersonGen.cs" />
+    <Compile Include="PopulateDatabase.cs" />
+    <Compile Include="PopulationCenterGen.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaceGen.cs" />
+    <Compile Include="RegionGen.cs" />
+    <Compile Include="WorldGen.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{8fa603b6-5d05-4af0-820b-42da2bcc2ab2}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Names\Adjectives.txt" />
+    <Content Include="Names\DeityNames.txt" />
+    <Content Include="Names\DwarvenPlaceNames.txt" />
+    <Content Include="Names\ElvishPlaceNames.txt" />
+    <Content Include="Names\FemaleDwarfNames.txt" />
+    <Content Include="Names\FemaleElvishNames.txt" />
+    <Content Include="Names\FemaleHumanNames.txt" />
+    <Content Include="Names\HumanPlaceNames.txt" />
+    <Content Include="Names\MaleDwarfNames.txt" />
+    <Content Include="Names\MaleElvishNames.txt" />
+    <Content Include="Names\MaleHumanNames.txt" />
+    <Content Include="Names\NegativeTraits.txt" />
+    <Content Include="Names\PositiveTraits.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

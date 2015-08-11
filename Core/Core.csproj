@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8FA603B6-5D05-4AF0-820B-42DA2BCC2AB2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calendar\Day.cs" />
+    <Compile Include="Calendar\Month.cs" />
+    <Compile Include="Calendar\Week.cs" />
+    <Compile Include="Calendar\Year.cs" />
+    <Compile Include="Civilizations\Civilization.cs" />
+    <Compile Include="Helpers\PersonHelper.cs" />
+    <Compile Include="Interfaces\IDay.cs" />
+    <Compile Include="Interfaces\IMilitaryUnit.cs" />
+    <Compile Include="Interfaces\IDeity.cs" />
+    <Compile Include="Interfaces\IFortification.cs" />
+    <Compile Include="Interfaces\IMonth.cs" />
+    <Compile Include="Interfaces\IPerson.cs" />
+    <Compile Include="Interfaces\IRace.cs" />
+    <Compile Include="Interfaces\IObserver.cs" />
+    <Compile Include="Interfaces\ITraits.cs" />
+    <Compile Include="Interfaces\IWeek.cs" />
+    <Compile Include="Interfaces\IYear.cs" />
+    <Compile Include="Military\Castle.cs" />
+    <Compile Include="Military\Citadel.cs" />
+    <Compile Include="Military\Fort.cs" />
+    <Compile Include="Mythology\Deity.cs" />
+    <Compile Include="Mythology\Mythology.cs" />
+    <Compile Include="Observer\TheAllObserver.cs" />
+    <Compile Include="Persons\Person.cs" />
+    <Compile Include="Persons\Traits.cs" />
+    <Compile Include="Races\Dwarves.cs" />
+    <Compile Include="Races\Elves.cs" />
+    <Compile Include="Races\Humans.cs" />
+    <Compile Include="Climates\Grassland.cs" />
+    <Compile Include="Climates\Taiga.cs" />
+    <Compile Include="Climates\DeciduousForest.cs" />
+    <Compile Include="Climates\Chaparral.cs" />
+    <Compile Include="Climates\Alpine.cs" />
+    <Compile Include="Factories\RaceFactory.cs" />
+    <Compile Include="Factories\ClimateFactory.cs" />
+    <Compile Include="Factories\FeaturesFactory.cs" />
+    <Compile Include="Factories\PopulationCenterFactory.cs" />
+    <Compile Include="Factories\RegionFactory.cs" />
+    <Compile Include="Factories\TopographyFactory.cs" />
+    <Compile Include="Features\Bog.cs" />
+    <Compile Include="Features\Caves.cs" />
+    <Compile Include="Features\Craters.cs" />
+    <Compile Include="Features\Dunes.cs" />
+    <Compile Include="Features\Faults.cs" />
+    <Compile Include="Features\Forest.cs" />
+    <Compile Include="Features\Fumaroles.cs" />
+    <Compile Include="Features\Karst.cs" />
+    <Compile Include="Features\Ridges.cs" />
+    <Compile Include="Features\Rivers.cs" />
+    <Compile Include="Features\Shrubland.cs" />
+    <Compile Include="Features\Talus.cs" />
+    <Compile Include="Interfaces\IFeatures.cs" />
+    <Compile Include="Interfaces\ILanguage.cs" />
+    <Compile Include="Interfaces\IPopulationCenters.cs" />
+    <Compile Include="Interfaces\ITopography.cs" />
+    <Compile Include="Interfaces\IWorld.cs" />
+    <Compile Include="Languages\Language.cs" />
+    <Compile Include="PopulationCenters\Burgh.cs" />
+    <Compile Include="PopulationCenters\CastleTown.cs" />
+    <Compile Include="PopulationCenters\City.cs" />
+    <Compile Include="PopulationCenters\Hamlet.cs" />
+    <Compile Include="PopulationCenters\Metropolis.cs" />
+    <Compile Include="PopulationCenters\Town.cs" />
+    <Compile Include="PopulationCenters\Village.cs" />
+    <Compile Include="Climates\Desert.cs" />
+    <Compile Include="Climates\Rainforest.cs" />
+    <Compile Include="Regions\Region.cs" />
+    <Compile Include="Climates\Savanna.cs" />
+    <Compile Include="Climates\Steppe.cs" />
+    <Compile Include="Climates\Tundra.cs" />
+    <Compile Include="Continents\Continent.cs" />
+    <Compile Include="Enums\CoreEnums.cs" />
+    <Compile Include="Interfaces\IArtifact.cs" />
+    <Compile Include="Interfaces\IBase.cs" />
+    <Compile Include="Interfaces\IBodyOfWater.cs" />
+    <Compile Include="Interfaces\ICivilization.cs" />
+    <Compile Include="Interfaces\IClimate.cs" />
+    <Compile Include="Interfaces\IContinent.cs" />
+    <Compile Include="Interfaces\IRegion.cs" />
+    <Compile Include="Interfaces\IMythology.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Topography\Highlands.cs" />
+    <Compile Include="Topography\Hills.cs" />
+    <Compile Include="Topography\Lowlands.cs" />
+    <Compile Include="Topography\Mountains.cs" />
+    <Compile Include="Topography\Plains.cs" />
+    <Compile Include="Topography\Valleys.cs" />
+    <Compile Include="Utility\Extensions.cs" />
+    <Compile Include="Utility\Features.cs" />
+    <Compile Include="Utility\General.cs" />
+    <Compile Include="Utility\HistoricalRecord.cs" />
+    <Compile Include="Utility\ObjectDetails.cs" />
+    <Compile Include="Utility\PopulationCenter.cs" />
+    <Compile Include="Utility\Region.cs" />
+    <Compile Include="Utility\Topography.cs" />
+    <Compile Include="Worlds\World.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
