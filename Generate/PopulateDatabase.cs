@@ -1,4 +1,4 @@
-﻿using DatabaseConnection;
+﻿using Connections;
 using Microsoft.VisualBasic.FileIO;
 using System;
 using System.Collections.Generic;
@@ -75,7 +75,7 @@ namespace Generate
             DataTable nameListing = new DataTable();
             nameListing.Columns.Add("Name", typeof(string));
 
-            using (TextFieldParser parser = new TextFieldParser(@"C:\Users\Michael\Documents\Visual Studio 2013\Projects\WorldGenerator\Generate\Names\Adjectives.txt"))
+            using (TextFieldParser parser = new TextFieldParser(@"C:\Users\Michael Ovies\Source\Repos\WorldGenerator\WorldGen.Database\WordsAndNames\Adjectives.txt"))
             {
                 parser.Delimiters = new string[] { "|" };
                 while (true)

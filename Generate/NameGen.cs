@@ -1,12 +1,12 @@
 ﻿using System;
 using Core.Enums;
+using Connections;
+using System.Data;
 using Core.Utility;
 using Core.Interfaces;
+using System.Data.SqlClient;
 using System.Collections.Generic;
 using Microsoft.VisualBasic.FileIO;
-using System.Data;
-using System.Data.SqlClient;
-using DatabaseConnection;
 
 namespace Generate
 {

@@ -47,6 +47,19 @@
     <Content Include="Stored Procedures\spRaceNameGet.sql" />
     <Content Include="Stored Procedures\spRaceNameGetAll.sql" />
     <Content Include="Stored Procedures\spRaceNameAdd.sql" />
+    <Content Include="WordsAndNames\Adjectives.txt" />
+    <Content Include="WordsAndNames\DeityNames.txt" />
+    <Content Include="WordsAndNames\DwarvenPlaceNames.txt" />
+    <Content Include="WordsAndNames\ElvishPlaceNames.txt" />
+    <Content Include="WordsAndNames\FemaleDwarfNames.txt" />
+    <Content Include="WordsAndNames\FemaleElvishNames.txt" />
+    <Content Include="WordsAndNames\FemaleHumanNames.txt" />
+    <Content Include="WordsAndNames\HumanPlaceNames.txt" />
+    <Content Include="WordsAndNames\MaleDwarfNames.txt" />
+    <Content Include="WordsAndNames\MaleElvishNames.txt" />
+    <Content Include="WordsAndNames\MaleHumanNames.txt" />
+    <Content Include="WordsAndNames\NegativeTraits.txt" />
+    <Content Include="WordsAndNames\PositiveTraits.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

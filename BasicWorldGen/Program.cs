@@ -3,17 +3,17 @@ using Generate;
 using Core.Enums;
 using System.Linq;
 using Core.Worlds; // testing for now
+using Connections;
+using Core.Helpers;
+using Core.Persons;
+using Core.Climates;
 using Core.Languages;
 using Core.Mythology;
 using Core.Interfaces;
-using System.Collections.Generic;
-using Core.Climates;
-using Core.Helpers;
+using System.Threading;
 using Core.PopulationCenters;
 using System.Threading.Tasks;
-using System.Threading;
-using Core.Persons;
-using DatabaseConnection; // testing
+using System.Collections.Generic;
 
 namespace BasicWorldGen
 {
@@ -39,7 +39,7 @@ namespace BasicWorldGen
             //}
 
             //Database worldGen = new Database(System.Configuration.ConfigurationManager.AppSettings["Testing"]);
-            Database worldGen = new Database("WorldGen");
+            Database worldGen = new Database("DevWorldGen");
             new PopulateDatabaseNames(worldGen).AddAdjectives();
             Console.ReadLine();
 

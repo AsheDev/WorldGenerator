@@ -1,22 +1,19 @@
 ﻿USE MASTER
-ALTER DATABASE WorldGen SET SINGLE_USER WITH ROLLBACK IMMEDIATE
-GO
-DROP DATABASE WorldGen
-GO
-CREATE DATABASE WorldGen
-GO
-USE WorldGen
+ALTER DATABASE DevWorldGen SET SINGLE_USER WITH ROLLBACK IMMEDIATE
+DROP DATABASE DevWorldGen
+CREATE DATABASE DevWorldGen
+USE DevWorldGen
 GO
 CREATE SCHEMA [w]
 GO
 SET NOCOUNT ON
-GO
--- needed to manually create login "Generator_Engine" with password 1234
-CREATE USER Generator_Engine FOR LOGIN Generator_Engine
-GO
-ALTER USER Generator_Engine WITH DEFAULT_SCHEMA = [o]
-GO
-ALTER ROLE [db_owner] ADD MEMBER [Generator_Engine] -- set Generator_Engine as db_owner
+---
+IF NOT EXISTS (SELECT loginname FROM master.dbo.syslogins WHERE name = 'WorldGen_Engine')
+BEGIN
+	DECLARE @CreateLogin NVARCHAR(256) = 'CREATE LOGIN WorldGen_Engine WITH PASSWORD = ''1234'', DEFAULT_DATABASE = DevWorldGen, DEFAULT_LANGUAGE = us_english, CHECK_POLICY = OFF';
+	EXEC sp_executesql @CreateLogin
+END
+---
 
 
 
@@ -61,6 +58,16 @@ BEGIN
 	CREATE TABLE w.DeityNames (
 		Id					INT IDENTITY(1,1) PRIMARY KEY,
 		Name				NVARCHAR(256) NOT NULL
+	);
+END
+GO
+
+IF (NOT EXISTS (SELECT * FROM sysobjects WHERE (name = N'PartsOfSpeech') AND (TYPE = 'U')))
+BEGIN
+	CREATE TABLE w.PartsOfSpeech (
+		Id							INT IDENTITY(1,1) PRIMARY KEY,
+		PartOfSpeech				NVARCHAR(256), -- verb, noun, adjective...
+		[Description]				NVARCHAR(256)
 	);
 END
 GO
@@ -119,10 +126,21 @@ CREATE TYPE LocationList AS TABLE (
 		Name				NVARCHAR(256)
 );
 
-
-
-
+--*************--
+INSERT INTO w.PartsOfSpeech
+(PartOfSpeech, [Description])
+VALUES
+('Verb', 'An action or state'),
+('Noun', 'A thing or person'),
+('Adjective', 'Describes a noun'),
+('Adverb', 'Describes an a verb, adjective, or an adverb'),
+('Pronoun', 'Replaces a noun'),
+('Conjunction', 'Join clauses, or sentences, or words'),
+('Preposition', 'Links a noun to another word'),
+('Interjection', 'A short exclamation that can also be inserted into a sentence');
 
 -- STORED PROCEDURES
-
-r: "C:\Users\Michael\Documents\Visual Studio 2013\Projects\WorldGenerator\WorldGen.Database\Stored Procedures\spAdjectiveAdd.sql"
+:r C:\Users\"Michael Ovies"\Source\Repos\WorldGenerator\WorldGen.Database\"Stored Procedures"\spAdjectiveAdd.sql
+:r C:\Users\"Michael Ovies"\Source\Repos\WorldGenerator\WorldGen.Database\"Stored Procedures"\spRaceNameGet.sql
+:r C:\Users\"Michael Ovies"\Source\Repos\WorldGenerator\WorldGen.Database\"Stored Procedures"\spRaceNameGetAll.sql
+:r C:\Users\"Michael Ovies"\Source\Repos\WorldGenerator\WorldGen.Database\"Stored Procedures"\spRaceNameAdd.sql

@@ -1,4 +1,4 @@
-﻿USE WorldGen
+﻿USE DevWorldGen
 GO
 IF (EXISTS (SELECT name FROM sysobjects WHERE (name = N'AdjectiveAdd') AND (TYPE = 'P')))
 	DROP PROCEDURE w.AdjectiveAdd
